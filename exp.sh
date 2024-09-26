@@ -1,24 +1,28 @@
 #!/bin/bash
 
+# Inputs
 if [[ $# == 2 ]]; then
     export HOMEgfs=$1
-    export PSLOT=$2
+    export pslot=$2
 else
     echo 'Error: Exactly two arguments required'
     return 1
 fi    
 
-# Global workflow environment variables
-export EXPDIR=$work/expdir/$PSLOT
-export ROTDIR=$work/comrot/$PSLOT
+# Global Workflow environment variables
+export ICSDIR_ROOT=/scratch1/NCEPDEV/global/glopara/data/ICSDIR
+export HPC_ACCOUNT="da-cpu"
+export RUNTESTS=$work/RUNTESTS
+export EXPDIR=$work/RUNTESTS/expdir/$pslot
+export ROTDIR=$work/RUNTESTS/comrot/$pslot
 
-# Some useful directories
+# Set some useful directories
 export logs=$ROTDIR/logs/
 
 # Set aliases
-alias rview='$HOMEgfs/workflow/rocoto_viewer.py -d $EXPDIR/$PSLOT.db -w $EXPDIR/$PSLOT.xml'
-alias rrun='rocotorun -d $EXPDIR/$PSLOT.db -w $EXPDIR/$PSLOT.xml'
-alias rrunc='rocotorun -d $EXPDIR/$PSLOT.db -w $EXPDIR/$PSLOT.xml && crontab $EXPDIR/$PSLOT.crontab'
+alias rview='$HOMEgfs/workflow/rocoto_viewer.py -d $EXPDIR/$pslot.db -w $EXPDIR/$pslot.xml'
+alias rrun='rocotorun -d $EXPDIR/$pslot.db -w $EXPDIR/$pslot.xml'
+alias rrunc='rocotorun -d $EXPDIR/$pslot.db -w $EXPDIR/$pslot.xml && crontab $EXPDIR/$pslot.crontab'
 
 # Load GDASApp modules
 module use $HOMEgfs/sorc/gdas.cd/modulefiles
