@@ -29,6 +29,9 @@ alias rrunc='rocotorun -d $expdir/$pslot.db -w $expdir/$pslot.xml && crontab $ex
 module use $gwf/sorc/gdas.cd/modulefiles
 module load GDAS/hera
 
+# Add wxflow to PYTHONPATH
+export PYTHONPATH="$PYTHONPATH:$gwf/sorc/wxflow/src"
+
 # Print key environment variable contents
 echo $gwf
 echo $expdir
