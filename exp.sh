@@ -15,8 +15,8 @@ export HPC_ACCOUNT="da-cpu"
 export ICSDIR_ROOT=/scratch1/NCEPDEV/global/glopara/data/ICSDIR
 
 # Useful directory shortcuts
-export expdir=$RUNTESTS/EXPDIR
-export rotdir=$RUNTESTS/COMROOT
+export expdir=$RUNTESTS/EXPDIR/$pslot
+export rotdir=$RUNTESTS/COMROOT/$pslot
 export cidir=$gwf/ci/cases/pr/
 export logs=$rotdir/logs/
 export gdas=$gwf/sorc/gdas.cd
