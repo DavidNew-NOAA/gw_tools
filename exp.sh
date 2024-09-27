@@ -16,8 +16,9 @@ export ICSDIR_ROOT=/scratch1/NCEPDEV/global/glopara/data/ICSDIR
 
 # Useful directory shortcuts
 export expdir=$RUNTESTS/EXPDIR
-export comrot=$RUNTESTS/COMROOT
-export logs=$comrot/logs/
+export rotdir=$RUNTESTS/COMROOT
+export cidir=$gwf/ci/cases/pr/
+export logs=$rotdir/logs/
 export gdas=$gwf/sorc/gdas.cd
 
 # Rocoto aliases
@@ -35,5 +36,5 @@ export PYTHONPATH="$PYTHONPATH:$gwf/sorc/wxflow/src"
 # Print key environment variable contents
 echo $gwf
 echo $expdir
-echo $comrot
+echo $rotdir
 echo
