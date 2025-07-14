@@ -9,10 +9,12 @@ fi
 
 HOMEgfs=$gwf
 
+export pslot=$pslot_base
+
 cd $HOMEgfs
 
 set +x
-source ./workflow/gw_setup.sh
+source ./dev/ush/gw_setup.sh
 set -x
 
-./workflow/create_experiment.py --yaml $1
+./dev/workflow/create_experiment.py --yaml $1
